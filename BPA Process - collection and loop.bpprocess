@@ -1,0 +1,168 @@
+﻿<process name="collection and loop" version="1.0" bpversion="7.1.2.3518" narrative="we r not connecting to the collection&#xD;&#xA;" byrefcollection="true" preferredid="d6924a93-5c60-4bb4-bf27-d609bf924e50">
+  <view>
+    <camerax>0</camerax>
+    <cameray>-64</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="b32c288c-65dc-4521-9000-4e6bff1b5e46" name="Start" type="Start">
+    <display x="0" y="-210" />
+    <onsuccess>8013d9f8-de5c-42da-81db-25c0729418c2</onsuccess>
+  </stage>
+  <stage stageid="6a23eb64-3936-44ea-8ce5-9f0595259fec" name="End" type="End">
+    <display x="390" y="30" />
+  </stage>
+  <stage stageid="e9ef79e5-a322-4606-9a38-b3537981d681" name="Stage1" type="ProcessInfo">
+    <display x="-360" y="-150" w="150" h="90" />
+  </stage>
+  <stage stageid="6bbed10c-a590-4d49-ba45-6b9e4a47d6b0" name="calulation collection" type="Collection">
+    <display x="-195" y="15" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Number1" type="number" description="number1 value" />
+      <field name="Number2" type="number" description="number2 value" />
+      <field name="calculation" type="text" description="Calculation Text" />
+      <field name="Result" type="number" description="Value of number1 and number2" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Number1" type="number" value="8" />
+        <field name="Number2" type="number" value="42" />
+        <field name="calculation" type="text" value="add" />
+        <field name="Result" type="number" value="" />
+      </row>
+      <row>
+        <field name="Number1" type="number" value="29" />
+        <field name="Number2" type="number" value="5" />
+        <field name="calculation" type="text" value="sub" />
+        <field name="Result" type="number" value="" />
+      </row>
+      <row>
+        <field name="Number1" type="number" value="15" />
+        <field name="Number2" type="number" value="13" />
+        <field name="calculation" type="text" value="divide" />
+        <field name="Result" type="number" value="" />
+      </row>
+      <row>
+        <field name="Number1" type="number" value="29" />
+        <field name="Number2" type="number" value="43" />
+        <field name="calculation" type="text" value="multiply" />
+        <field name="Result" type="number" value="" />
+      </row>
+      <row>
+        <field name="Number1" type="number" value="22" />
+        <field name="Number2" type="number" value="17" />
+        <field name="calculation" type="text" value="add" />
+        <field name="Result" type="number" value="" />
+      </row>
+      <row>
+        <field name="Number1" type="number" value="24" />
+        <field name="Number2" type="number" value="13" />
+        <field name="calculation" type="text" value="sub" />
+        <field name="Result" type="number" value="" />
+      </row>
+      <row>
+        <field name="Number1" type="number" value="13" />
+        <field name="Number2" type="number" value="30" />
+        <field name="calculation" type="text" value="divide" />
+        <field name="Result" type="number" value="" />
+      </row>
+      <row>
+        <field name="Number1" type="number" value="17" />
+        <field name="Number2" type="number" value="8" />
+        <field name="calculation" type="text" value="multiply" />
+        <field name="Result" type="number" value="" />
+      </row>
+      <row>
+        <field name="Number1" type="number" value="35" />
+        <field name="Number2" type="number" value="5" />
+        <field name="calculation" type="text" value="add" />
+        <field name="Result" type="number" value="" />
+      </row>
+      <row>
+        <field name="Number1" type="number" value="50" />
+        <field name="Number2" type="number" value="35" />
+        <field name="calculation" type="text" value="sub" />
+        <field name="Result" type="number" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="8013d9f8-de5c-42da-81db-25c0729418c2" name="Loop Start1" type="LoopStart">
+    <loginhibit onsuccess="true" />
+    <display x="0" y="-135" />
+    <onsuccess>45cf012e-177c-41e4-8095-6d57275a9d1a</onsuccess>
+    <groupid>9bb2cfa8-3dd7-4e57-a4c8-a97d9fd988c0</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>calulation collection</loopdata>
+  </stage>
+  <stage stageid="4c8f7bfb-89b0-4538-8216-e78c481209da" name="Loop End1" type="LoopEnd">
+    <loginhibit onsuccess="true" />
+    <display x="285" y="30" />
+    <onsuccess>6a23eb64-3936-44ea-8ce5-9f0595259fec</onsuccess>
+    <groupid>9bb2cfa8-3dd7-4e57-a4c8-a97d9fd988c0</groupid>
+  </stage>
+  <stage stageid="45cf012e-177c-41e4-8095-6d57275a9d1a" name="Choice1" type="ChoiceStart">
+    <display x="0" y="-90" />
+    <groupid>36bf924b-1170-4539-940d-3795e9437dc6</groupid>
+    <choices>
+      <choice expression="[calulation collection.calculation]=&quot;add&quot;">
+        <name>add</name>
+        <distance>33</distance>
+        <ontrue>6d2c322d-880e-4057-9ecd-82de61e79b1e</ontrue>
+      </choice>
+      <choice expression="[calulation collection.calculation]=&quot;sub&quot;">
+        <name>sub</name>
+        <distance>66</distance>
+        <ontrue>59f3c20f-be96-4210-84c7-47ad6e194397</ontrue>
+      </choice>
+      <choice expression="[calulation collection.calculation]=&quot;multiply&quot;">
+        <name>multiply</name>
+        <distance>99</distance>
+        <ontrue>d2d9d6f9-5271-4b1d-9cfc-18d4eab13a12</ontrue>
+      </choice>
+      <choice expression="[calulation collection.calculation]=&quot;divide&quot;">
+        <name>divide</name>
+        <distance>132</distance>
+        <ontrue>86a2dbe0-2273-49e4-bec0-d89969f06069</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="7260e853-2bca-4be0-8b2a-6ee1d06b086a" name="Otherwise1" type="ChoiceEnd">
+    <display x="0" y="75" />
+    <onsuccess>cd974b8a-8c17-4816-baf7-3e4991a57392</onsuccess>
+    <groupid>36bf924b-1170-4539-940d-3795e9437dc6</groupid>
+  </stage>
+  <stage stageid="6d2c322d-880e-4057-9ecd-82de61e79b1e" name="add" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-45" />
+    <onsuccess>4c8f7bfb-89b0-4538-8216-e78c481209da</onsuccess>
+    <calculation expression="[calulation collection.Number1] + [calulation collection.Number2]" stage="calulation collection.Result" />
+  </stage>
+  <stage stageid="59f3c20f-be96-4210-84c7-47ad6e194397" name="sub" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="135" y="-15" />
+    <onsuccess>4c8f7bfb-89b0-4538-8216-e78c481209da</onsuccess>
+    <calculation expression="[calulation collection.Number1] - [calulation collection.Number2]" stage="calulation collection.Result" />
+  </stage>
+  <stage stageid="d2d9d6f9-5271-4b1d-9cfc-18d4eab13a12" name="multiply" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="135" y="15" />
+    <onsuccess>4c8f7bfb-89b0-4538-8216-e78c481209da</onsuccess>
+    <calculation expression="[calulation collection.Number1] * [calulation collection.Number2]" stage="calulation collection.Result" />
+  </stage>
+  <stage stageid="86a2dbe0-2273-49e4-bec0-d89969f06069" name="divide" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="135" y="45" />
+    <onsuccess>4c8f7bfb-89b0-4538-8216-e78c481209da</onsuccess>
+    <calculation expression="[calulation collection.Number1] / [calulation collection.Number2]" stage="calulation collection.Result" />
+  </stage>
+  <stage stageid="cd974b8a-8c17-4816-baf7-3e4991a57392" name="error" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="135" y="75" />
+    <onsuccess>4c8f7bfb-89b0-4538-8216-e78c481209da</onsuccess>
+    <calculation expression="0" stage="calulation collection.Result" />
+  </stage>
+</process>
